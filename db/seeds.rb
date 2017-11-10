@@ -10,14 +10,18 @@ require 'json'
 
 Ingredient.destroy_all
 
+puts "Deleted all previous records"
+
 url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredients_serialized = open(url).read
 ingredients = JSON.parse(ingredients_serialized)
 all_ingredients = ingredients["drinks"]
 
+puts "Fetching data from API"
+
 all_ingredients.each do |ing|
   Ingredient.create(name: ing["strIngredient1"])
 end
 
-
+puts "Ingredients sucessfully created"
 

@@ -1,0 +1,19 @@
+// Specific CS_sS for your home-page
+
+.flexbox {
+  display: flex;
+  margin-top: 10px;
+  border-radius: 8px;
+  justify-content: space-between;
+  background-color: rgba(8, 37, 100, 0.1);
+  padding: 20px;
+}
+
+.cocktail-content {
+  margin-left: 15px;
+  vertical-align: center;
+}
+
+.add_dose_button {
+  text-align: center;
+}

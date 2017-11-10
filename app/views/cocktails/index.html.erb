@@ -1,15 +1,16 @@
 <div class="welcome" style="background-image: linear-gradient(rgba(10,10,10,0.3), rgba(10,10,10,0.2)), url('https://media.timeout.com/images/100519023/image.jpg');">
   <div class="welcome_content">
-    <h1 class="logo-text">Welcome to Mr. Cocktail</h1>
-    <%= link_to "See All Cocktails", new_cocktail_path, class: "btn-sm btn-primary"%>
+    <h1 class="logo-text"> Welcome to Mr. Cocktail</h1>
+    <%= link_to "See All Cocktails", root_path(:anchor => "container2"), class: "btn-sm btn-primary"%>
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="container2">
   <div class="row">
     <% @cocktails.each do |c| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.seriouseats.com/recipes/assets_c/2016/05/20160512-recipe-brooklyn-bartender-cocktails-vicky-wasik-100-year-old-cigar-thumb-1500xauto-432000.jpg');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path c.photo, height: 300, width: 400, crop: :fill %>')">
         <div class="card-description">
           <h2><%= c.name %></h2>
         </div>
