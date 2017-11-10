@@ -1,11 +1,14 @@
-<h1>This is the show page for <%= @cocktail.name %></h1>
 
-<ul>
-<% @cocktail.doses.each do |dose| %>
-<li> Desc: <%= dose.description %> Ingredients: <%= dose.ingredient.name %> </li>
-<%= link_to "Delete", dose_path(dose), method: :delete, class: "btn btn-primary"%>
-<% end %>
-</ul>
+<div class="container">
+  <h1>This is the show page for <%= @cocktail.name %></h1>
 
-<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
+  <ul>
+  <% @cocktail.doses.each do |dose| %>
+  <li> Desc: <%= dose.description %> Ingredients: <%= dose.ingredient.name %> </li>
+  <%= link_to "Delete", dose_path(dose), method: :delete, class: "btn btn-primary"%>
+  <% end %>
+  </ul>
+
+  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"%>
+</div>
 

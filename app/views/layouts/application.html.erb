@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMisterCocktail</title>
+    <title>Mr. Cocktail</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Gabriela" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+
+  <div class="navbar-wagon">
+  <!-- Logo -->
+    <a href="/" class="navbar-wagon-brand">
+      <h3 class="logo-text">Mr. Cocktail</h3>
+    </a>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn-sm btn-primary"%>
+
+      <!-- Profile picture with dropdown list -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <%= yield %>
+
   </body>
 </html>

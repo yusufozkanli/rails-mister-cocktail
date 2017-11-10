@@ -1,9 +1,24 @@
-<h1>Cocktails List</h1>
+<div class="welcome" style="background-image: linear-gradient(rgba(10,10,10,0.3), rgba(10,10,10,0.2)), url('https://media.timeout.com/images/100519023/image.jpg');">
+  <div class="welcome_content">
+    <h1 class="logo-text">Welcome to Mr. Cocktail</h1>
+    <%= link_to "See All Cocktails", new_cocktail_path, class: "btn-sm btn-primary"%>
+  </div>
+</div>
 
-<ul>
-<% @cocktails.each do |c| %>
-<li><%= c.name %> <%= link_to "See Details", cocktail_path(c), class: "btn btn-primary"%></li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |c| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.seriouseats.com/recipes/assets_c/2016/05/20160512-recipe-brooklyn-bartender-cocktails-vicky-wasik-100-year-old-cigar-thumb-1500xauto-432000.jpg');">
+        <div class="card-description">
+          <h2><%= c.name %></h2>
+        </div>
+        <%= link_to "", cocktail_path(c), class: "card-link"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary"%>
+
+
